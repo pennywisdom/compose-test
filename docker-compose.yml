@@ -1,0 +1,15 @@
+---
+version: '3'
+services:
+  svc1:
+    build:
+      context: .\
+
+    env_file: ".env2"
+    labels:
+      - "foo=$FOO"
+
+networks:
+  default:
+    external:
+      name: nat
